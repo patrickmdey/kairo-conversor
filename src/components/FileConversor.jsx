@@ -25,11 +25,12 @@ export function FileConversor() {
 			if (file.name.endsWith('.xlsx')) {
 				const data = new Uint8Array(event.target.result);
 				const workbook = XLSX.read(data, { type: 'array' });
-				console.log(workbook.SheetNames.length);
 				const firstSheetName = workbook.SheetNames[0];
+				console.log(workbook.SheetNames.length);
 				const worksheet = workbook.Sheets[firstSheetName];
+				console.log('WORKSHEET:', worksheet);
 				csvData = XLSX.utils.sheet_to_csv(worksheet);
-				console.log(csvData);
+				console.log('DATA:', csvData === undefined);
 			} else if (file.name.endsWith('.csv')) {
 				csvData = event.target.result;
 			} //the read file
@@ -96,6 +97,8 @@ export function FileConversor() {
 							',,,,,,,,,,,,,,,,,,,,,,,,,,,* myContacts,,' +
 							parts[1] +
 							',' +
+							parts[2] +
+							',' +
 							parts[2]
 					);
 				}
@@ -109,6 +112,10 @@ export function FileConversor() {
 	};
 
 	const downloadData = () => {
+		if (data === null || data.length === 1) {
+			alert('Resultado vacio');
+			return;
+		}
 		const fileData = data.join('\n');
 
 		const blob = new Blob([fileData], { type: 'text/csv' });
