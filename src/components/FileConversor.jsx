@@ -19,7 +19,7 @@ export function FileConversor() {
 		const reader = new FileReader();
 
 		reader.onload = (event) => {
-			const partyName = inputString || 'Result';
+			const partyName = inputString;
 			let csvData;
 
 			if (file.name.endsWith('.xlsx')) {
@@ -37,6 +37,7 @@ export function FileConversor() {
 			else {
 				alert('Solo acepta .csv o .xlsx');
 				setData(null);
+				setInputString('');
 				document.getElementById('file-input').value = '';
 				return;
 			}
@@ -127,11 +128,13 @@ export function FileConversor() {
 		document.body.appendChild(a);
 		a.click();
 		window.URL.revokeObjectURL(url);
+
+		restart();
 	};
 
 	const restart = () => {
 		setData(null);
-		document.getElementById('file-input').value = '';
+		document.getElementById('file-input').value = null;
 		setInputString('');
 		document.getElementById('party-input').value = '';
 	};
@@ -149,7 +152,13 @@ export function FileConversor() {
 					</div>
 					<div className='file-input-section'>
 						<label htmlFor='file-input'>Subir archivo:</label>
-						<input id='file-input' type='file' onChange={handleFile} className='file-input' />
+						<input
+							disabled={inputString === ''}
+							id='file-input'
+							type='file'
+							onChange={handleFile}
+							className='file-input'
+						/>
 						<div className='download-section'>
 							<button
 								disabled={!data || inputString === ''}
