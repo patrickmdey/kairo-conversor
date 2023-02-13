@@ -1,0 +1,128 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.main-container {
+	margin: 0 10vw;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.party-name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.party-name > label {
+	margin-right: 10px;
+}
+
+.party-name > input {
+	height: 20px;
+}
+
+.form-container > * {
+	margin: 10px 0;
+}
+
+.bg-image {
+	width: 100vw;
+	height: 100vh;
+	background-image: url('assets/gradient.png');
+	display: flex;
+	justify-content: center;
+	padding: 10vh 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5%;
+}
+.card {
+	width: 80%;
+	max-width: 500px;
+	height: 45%;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	padding: 20px;
+}
+
+.file-input-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.file-input {
+	padding: 5%;
+	font-size: 90%;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.download-section {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.download-section > * {
+	margin: 0 10px;
+}
+
+.download-button {
+	padding: 10px 20px;
+	background-color: goldenrod;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.download-button:hover {
+	background-color: darkgoldenrod;
+}
+
+.download-button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.remove-button {
+	background-color: red;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.remove-button:hover {
+	background-color: darkred;
+}
+
+.remove-button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
