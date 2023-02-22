@@ -21,13 +21,13 @@ code {
 	justify-content: center;
 }
 
-.party-name {
+.party-name-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.party-name > label {
+.party-name-container > label {
 	margin-right: 10px;
 }
 
@@ -109,13 +109,13 @@ code {
 }
 
 .remove-button {
+	padding: 10px 20px;
 	background-color: red;
 	color: white;
-	padding: 10px 20px;
-	border-radius: 5px;
 	border: none;
-	outline: none;
+	border-radius: 5px;
 	cursor: pointer;
+	font-size: 16px;
 }
 
 .remove-button:hover {

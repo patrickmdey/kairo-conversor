@@ -143,15 +143,15 @@ export function FileConversor() {
 		<div className='card'>
 			<div className='container'>
 				<h2>
-					<u>CONVERSOR DE ARCHIVOS KAIRO</u>
+					<u>Datos a Contacts</u>
 				</h2>
 				<div className='form-container'>
-					<div className='party-name'>
+					<div className='party-name-container'>
 						<label htmlFor='party-input'>Nombre del evento:</label>
-						<input id='party-input' type='text' onChange={handleInput} />
+						<input id='party-input' type='text' placeholder='Evento' onChange={handleInput} />
 					</div>
 					<div className='file-input-section'>
-						<label htmlFor='file-input'>Subir archivo:</label>
+						<label htmlFor='file-input'>Elegir archivo:</label>
 						<input
 							disabled={inputString === ''}
 							id='file-input'
@@ -165,7 +165,7 @@ export function FileConversor() {
 								onClick={downloadData}
 								className='download-button'
 							>
-								Descargar Contactos
+								Descargar Contacts
 							</button>
 							<button className='remove-button' onClick={restart}>
 								Reiniciar
