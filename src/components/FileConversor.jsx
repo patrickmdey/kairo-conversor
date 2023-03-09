@@ -46,11 +46,16 @@ export function FileConversor() {
 			let processedData = [];
 			let entries = [];
 			let rrpp = [];
+			let separator = ',';
+
+			if (lines[0].contains(';'))
+				separator = ';';
+
 
 			for (let i = 1; i < lines.length; i++) {
 				// for (let i = 1; i < 2; i++) {
 				// lines[i] = replaceString(',', ';', lines[i]);
-				let parts = lines[i].split(',');
+				let parts = lines[i].split(separator);
 
 				if (parts.length === 0 || parts[2].length < 4) continue;
 
