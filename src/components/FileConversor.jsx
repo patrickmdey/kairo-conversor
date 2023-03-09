@@ -48,16 +48,14 @@ export function FileConversor() {
 			let rrpp = [];
 			let separator = ',';
 
-			if (lines[0].contains(';'))
-				separator = ';';
-
+			if (lines[0].includes(';')) separator = ';';
+			// if (lines[0].contains(';'))
+			// 	separator = ';';
 
 			for (let i = 1; i < lines.length; i++) {
-				// for (let i = 1; i < 2; i++) {
-				// lines[i] = replaceString(',', ';', lines[i]);
 				let parts = lines[i].split(separator);
 
-				if (parts.length === 0 || parts[2].length < 4) continue;
+				if (parts.length === 0 || parts[2] === undefined || parts[2].length < 4) continue;
 
 				//remove 'fecha' column
 				if (parts.length === 5) parts.splice(3, 1);
@@ -129,7 +127,7 @@ export function FileConversor() {
 		const a = document.createElement('a');
 
 		a.href = url;
-		a.download = inputString + '.csv';
+		a.download = inputString + ' Contacts.csv';
 		document.body.appendChild(a);
 		a.click();
 		window.URL.revokeObjectURL(url);
